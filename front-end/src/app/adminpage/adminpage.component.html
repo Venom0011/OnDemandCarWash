@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLinkActive="active" routerLink="/admin-page">AdminPanel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " routerLinkActive="active" aria-current="page" routerLink="/payments">Payment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" href="#">Orders</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLinkActive="active" routerLink="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            GetAll
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/user-list">User</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/wash-package">WashPackage</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/addon-package">Addon</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button *ngIf="isLoggedIn()" class="btn btn-outline-success" (click)="logout()">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container admin" *ngIf="isAdminPage()">
+  <div class="row mt-3">
+    <div class="col-md-4">
+      
+      
+
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="container">
+            <img style="max-width: 125px;" class="img-fluid" src="../../assets/img/team.png">
+          </div>
+          <h1>10</h1>
+          <h1 class="text-uppercase text-muted">Users</h1>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="container">
+            <img style="max-width: 125px;" class="img-fluid" src="../../assets/img/payment-method.png">
+          </div>
+          <h1>10</h1>
+          <h1 class="text-uppercase text-muted">Payments</h1>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="container">
+            <img style="max-width: 125px;" class="img-fluid" src="../../assets/img/order.png">
+          </div>
+          <h1>10</h1>
+          <h1 class="text-uppercase text-muted">Orders</h1>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    
+    <div class="col-md-6">
+
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="container">
+            <img style="max-width: 125px;" class="img-fluid" src="../../assets/img/car.png">
+          </div>
+          <h1>10</h1>
+          <h1 class="text-uppercase text-muted">WashPackages</h1>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="container">
+            <img style="max-width: 125px;" class="img-fluid" src="../../assets/img/add.png">
+          </div>
+          <h1>10</h1>
+          <h1 class="text-uppercase text-muted">Addons</h1>
+        </div>
+      </div>
+
+    </div>
+  
+  </div>
+</div>

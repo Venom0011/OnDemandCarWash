@@ -1,0 +1,38 @@
+<cws-adminpage></cws-adminpage>
+<div class="container my-5">
+
+    <h1 class="mb-3"> Payments </h1>
+    <div *ngFor="let payment of payments">
+        <b><p id="userid">userId:{{payment.userId}}</p></b>
+        <table class="table" *ngIf="payments && payments.length >0">
+            <thead>
+                <tr>
+                    <th>cardHolderName</th>
+                    <th>cardType</th>
+                    <th>cardNumber</th>
+                    <th>paymentStatus</th>
+                    <th>totalAmount</th>
+                    <th>email</th>
+                    <th>address</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td> {{payment.cardHolderName}} </td>
+                    <td> {{payment.cardType}}</td>
+                    <td> {{payment.cardNumber}}</td>
+                    <td>{{payment.paymentStatus}}</td>
+                    <td> {{payment.totalAmount}}</td>
+                    <td> {{payment.user.email}}</td>
+                    <td> {{payment.user.address}}</td>
+
+
+                    <!-- <a type="button" class="btn btn-danger" (click)="deleteuser(user?.id)">Delete</a> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p *ngIf="!payments || payments.length <=0" class="text-center h3">No Payments done..</p>
+</div>
